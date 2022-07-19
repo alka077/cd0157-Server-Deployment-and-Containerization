@@ -8,4 +8,3 @@ RUN pip install --proxy=http://proxy-ap.shell.com:80 flask
 
 
 ENTRYPOINT ["python", "app.py"]
-
