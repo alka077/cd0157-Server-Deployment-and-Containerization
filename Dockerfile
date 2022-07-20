@@ -8,7 +8,9 @@ WORKDIR /app
 
 # Install `pip` and needed Python packages from `requirements.txt`
 RUN pip install --upgrade pip
-RUN python -m pip install --proxy=http://proxy-ap.shell.com:80 -r requirements.txt
+RUN python -m pip install -r requirements.txt
+
+# --proxy=http://proxy-ap.shell.com:80 
 
 # Define an entrypoint which will run the main app using the Gunicorn WSGI server.
 ENTRYPOINT ["gunicorn", "-b", ":8080", "main:APP"]
